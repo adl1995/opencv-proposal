@@ -1,0 +1,24 @@
+##Introduction##
+----------------
+The algorithm mentioned below proven to be numerous magnitudes time faster than other methods dealing with high noise level. 
+
+
+##Problem outline##
+-------------------
+
+##Use cases##
+-------------
+
+High noise images usualy arise when in biomedical satelites application. As the images are captured with a 
+high shutter speed, this leads to an increased level of noise content.
+
+##Traditional approach##
+------------------------
+
+When dealing with high noise images, different approaces are adopted, so it does not suffer degradation of the general purpose noise.
+
+##Alternative approach##
+
+As it takes a long time to detect all edges using the traditional approach. I plan on implementing a different algorithm (mentioned in **this** CVPR paper) which tackles the problem differently. This algorithm will work on heirarchical binary patters. It constructs matched filters for detected edges using the bottom up approach. ... so it runtime is linear.
+
+We calculate the response scores. ... There a two ways to solve this, either by using rectangular or triangular partitioning.
