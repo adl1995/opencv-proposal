@@ -21,14 +21,23 @@ In my previous semester, I enrolled myself in Digital Image Processing course. D
 
 Apart from this, I have also been a PHP web developer for almost two years, and I have worked on multitude of project ranging for SaaS to e-commerce websites. I work remotely on [Upwork](https://www.upwork.com/freelancers/~018e56b8591046f889) and [Fiverr](https://www.fiverr.com/adl1995). My clients are either IT organizations or independent contractors. I have also worked on web automation and data scraping using ``Selenium`` and ``BeautifulSoup``. Although these skills are not required for this organization and have no direct links in my proposed project, it shows that I am persistent and hard-working. The skills that I acquire are through self learning and consistency. Currently I am building an application using [Google Application Engine](https://github.com/adl1995/zoho-portal).
 
-I have started collaborating with Open Source organizations for only about a month now, and my experience has been excellent so far. The mentors have been very kind, welcoming and have helped provided assistance along the way. 
+#### Why me? ####
 
+I started collaborating with Open Source organizations for only about a month now, and my experience has been excellent so far. The mentors have been very kind, welcoming and have provided assistance along the way. Given my background in Computer Vision and being good at problem solving, I firmly believe this prestigious organization and its users will benefit by this features' addition in the library. For me it would provide a working ground knowledge on how to tackle things in real life.
+
+Pull requests
+-------
+
+For the past few weeks I have made numerous commits concered with current documentation. I then opened up a Pull Request (https://github.com/opencv/opencv/pull/8253) which finally got merged. Also, I created this issue (https://github.com/opencv/opencv/issues/8260) regarding the current Doxygen documentation. My suggestion was to put all the 'repeated' information in a main view and extend the sub-views from it. This saves time and allows the editor to make changes in only one file. Although these are all documentation changes, I believe them to be crucial for new users of OpenCV or any tool for that matter. It creates a 'welcoming' sense for the user. 
+
+Apart from this, I created some C++ scripts locally utilizing the various features offered by OpenCV. 
 
 Project details
 --------
 
 ### Research paper ###
 > [Fast Detection of Curved Edges at Low SNR](https://arxiv.org/pdf/1505.06600.pdf)
+
 ### Problem statement ###
 
 Let's elaborate on edge detection in noisy images.
@@ -86,6 +95,11 @@ BeamCurveTree(V):
 
 Here ``BC`` is a data structure in which we store our tree. The edge map *E* is constructed by setting all points of *E* to zero. Then, we it assign with significance scores based on φ(γ) I described earlier. Then all the curves are sorted in descending order. For each curve γ in this sorted list,
 for each pixel *p ∈ P*, *E(p)* is set to hold the score of γ. Non-maximum suppression is then applied to deal with over lapping curves. 
+
+There are two alternatives to binary beam tree, namely  Triangle-Partition-Tree (TPT) and  the Rectangle-Partition-Tree (RPT). A TPT is usually computationaly faster. In RPT the square matrix is recursively broken down into smaller matrices uptil our n<sub>min</sub> has been reached. As the name denotes for TPT the image is broken down into smalled triangles. Both these yield a similar edge detection performance.
+
+#### Results ####
+As mentioned in the paper experiments were conducted on images with different SNR levels. Image of the letter 'S' was used for this purpose. Different SNR levels 0.6 and 2.6 in intervals of 0.2 were chosen. Futhermore, salt and pepper noise was added in the image. This only affect around 1% of the total pixels. The F-measure was computed and compared with results achieved through other algorithms. F-measure is a summary statistic for a precision-recall curve, mentioned in [this](https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/papers/mfm-pami-boundary.pdf) paper. Our algorithm achieved the best score.
 
 ## Timeline ##
 
