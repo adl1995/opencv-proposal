@@ -17,18 +17,18 @@ Student information
 Background
 ------
 
-In my previous semester, I enrolled myself in Digital Image Processing course. During the tenure of this course I implemented filters (Gaussian, Sobel, Prewitt, Laplacian), edge detectors (Canny, Marr Hildreth), morphological operators (Covex hulling, Erosion, Dilation), object detectors (Generalized Hough transform, simple convolution), and seam carvers. These were implemented purely in Python, making no use of any library other than ``Numpy`` and ``Matplotlib``. This attenuated my interest in Computer Vision and I have been an active researcher since then. I have showcased these project on my [GitHub profile](https://github.com/adl1995). The most interesting algorithm I implemented was [Generalized Hough Tranfrom](https://github.com/adl1995/generalised-hough-transform). I was amazed as to how something as simple as an equation of line could lead to detection of objects in images. Although my implementation was only scale invariant, I plan on extending this invariancy to orientation as well. 
+In my previous semester, I enrolled myself in Digital Image Processing course. During the tenure of this course I implemented filters (Gaussian, Sobel, Prewitt, Laplacian), edge detectors (Canny, Marr Hildreth), morphological operators (Covex hulling, Erosion, Dilation), object detectors (Generalized Hough transform, simple convolution), and seam carvers. These were implemented purely in Python, making no use of external libraries other than ``Numpy`` and ``Matplotlib``. This attenuated my interest in Computer Vision and I have been an active researcher in the domain since then. I have showcased these project on my [GitHub profile](https://github.com/adl1995). The most interesting algorithm I implemented was [Generalized Hough Tranfrom](https://github.com/adl1995/generalised-hough-transform). I was amazed as to how something as simple as an equation of line could lead to detection of objects in images. Although my implementation was only scale invariant, I plan on extending this invariancy to orientation as well. 
 
-Apart from this, I have also been a PHP web developer for almost two years, and I have worked on multitude of project ranging for SaaS to e-commerce websites. I work remotely on [Upwork](https://www.upwork.com/freelancers/~018e56b8591046f889) and [Fiverr](https://www.fiverr.com/adl1995). My clients are either IT organizations or independent contractors. I have also worked on web automation and data scraping using ``Selenium`` and ``BeautifulSoup``. Although these skills are not required for this organization and have no direct links in my proposed project, it shows that I am persistent and hard-working. The skills that I acquire are through self learning and consistency. Currently I am building an application using [Google Application Engine](https://github.com/adl1995/zoho-portal).
+Apart from this, I have also been a PHP web developer for almost two years, and I have worked on multitude of projects ranging for SaaS to e-commerce websites. I work remotely on [Upwork](https://www.upwork.com/freelancers/~018e56b8591046f889) and [Fiverr](https://www.fiverr.com/adl1995). My clients are either IT organizations or independent contractors. I have also worked on web automation and data scraping using ``Selenium`` and ``BeautifulSoup``. Although these skills are not required for this organization and have no direct links in my proposed project, it shows that I am persistent and hard-working. The skills that I acquire are through self learning and consistency. Currently I am building an application using [Google Application Engine](https://github.com/adl1995/zoho-portal).
 
 #### Why me? ####
 
-I started collaborating with Open Source organizations for only about a month now, and my experience has been excellent so far. The mentors have been very kind, welcoming and have provided assistance along the way. Given my background in Computer Vision and being good at problem solving, I firmly believe this prestigious organization and its users will benefit by this features' addition in the library. For me it would provide a working ground knowledge on how to tackle things in real life.
+I started collaborating with Open Source organizations for only about a month now, and my experience has been excellent so far. The mentors have been very kind, welcoming and have provided assistance along the way. Given my background in Computer Vision and being good at problem solving, I firmly believe this prestigious organization and its users will benefit by this features' addition in the library. It would also provide me with a working ground knowledge on how to tackle things in real life.
 
 Pull requests
 -------
 
-For the past few weeks I have made numerous commits concered with current documentation. I then opened up a Pull Request (https://github.com/opencv/opencv/pull/8253) which finally got merged. Also, I created this issue (https://github.com/opencv/opencv/issues/8260) regarding the current Doxygen documentation. My suggestion was to put all the 'repeated' information in a main view and extend the sub-views from it. This saves time and allows the editor to make changes in only one file. Although these are all documentation changes, I believe them to be crucial for new users of OpenCV or any tool for that matter. It creates a 'welcoming' sense for the user. 
+For the past few weeks I have made numerous commits concered with current documentation. I then opened up a Pull Request (https://github.com/opencv/opencv/pull/8253) which finally got merged. Also, I created this issue (https://github.com/opencv/opencv/issues/8260) regarding the current ``Doxygen`` documentation. My suggestion was to put all the 'repeated' information in a main view and extend sub-views from it. This saves time and allows the editor to make changes in only one file. Although these are all documentation changes, I believe them to be crucial for new users of OpenCV or any tool for that matter. It creates a 'welcoming' sense for the user. 
 
 Apart from this, I created some C++ scripts locally utilizing the various features offered by OpenCV. 
 
@@ -45,29 +45,29 @@ Let's elaborate on edge detection in noisy images.
 
 ### Use cases ###
 Low signal-to-noise ratio images mostly occur under poor visibility conditions. They mostly occur in
-``biomedical``, ``satellite``, ``underwater``, and high shutter speed imaging.
+``biomedical``, ``satellite``, ``underwater``, and high shutter speed imaging. It is crucial for these images to be viewed under better conditions, thus the addition of this algorithm will provide assisstance to the members of these communities. 
 
 ### Abstract ###
 
-When dealing with noisy images, different approaches are adopted, so it does not degrade the content of an image. Mostly, a Canny Edge detector is used for this purpose, which first applies a Gaussian filter to smooth out the image, and then computes its gradients. It effectively attenuates the noise in an image through its application. Different approaches are used for this problem. Some algorithms denoise an image prior to edge detection, but this does not provide improved results.
+When dealing with noisy images, different approaches are adopted, such that it does not degrade the content of an image. Mostly, a Canny Edge detector is used for this purpose, which first applies a Gaussian filter to smooth out the image, and then computes its gradients. It effectively attenuates the noise in an image through its application. Different approaches are used for this problem. Some algorithms denoise an image prior to edge detection, but this does not provide improved results.
 
-The approach that I plan to implement (mentioned in the [CVPR paper](https://arxiv.org/pdf/1505.06600.pdf)) detects faint edges in an image. This is down by applying a collection of matched filters to the image, and then retaining / keeping only those edges that are statistically significant. When an actual edge is detected through, it faints out surrounding noise from the region. The longer the edge is, the noise gets more attenuated, hence it does not suffer degradation from other general purpose filters.
+The approach that I plan to implement (mentioned in the [CVPR paper](https://arxiv.org/pdf/1505.06600.pdf)) detects faint edges in an image. This is done by applying a collection of matched filters to the image, and then retaining / keeping only those edges that are statistically significant. When an actual edge is detected, it faints out surrounding noise from the region. The longer the edge, the more noise gets attenuated, hence it does not suffer degradation from other general purpose filters.
 
 The algorithm mentioned below has proven to be numerous magnitude times faster than other methods dealing with high noise level. 
 
 ### Detailed description ###
 
-Edge detection filters proposed by Sobel, Prewitt, and Marr & Hildreth are although effective for computing edges, they are somewhat invariant to noise in images. As the images we work with have low signal-to-noise ratio (SNR), these algorithm do not perform well on them. An exception to this is Canny, it performs hysteresis thresholding of local gradient magnitudes. This post-processing technique improves its accuracy. 
+Edge detection filters proposed by Sobel, Prewitt, and Marr & Hildreth are although effective for computing edges, they are somewhat invariant to noisy images. As the images we will work with have low signal-to-noise ratio (SNR), these algorithms do not perform well on them. An exception to this is Canny, it performs hysteresis thresholding of local gradient magnitudes. This post-processing technique improves its accuracy. 
 
-The algorithm proposed in this paper first denoises an images. Image denoising can be done in a number of ways. In the recent years bilateral filtering, anisotropic diffusion, non-local means have been used. These methods, however, only denoise an image in patches. However, I plan on implementing a ``wavelet based edge detection`` method.
+The algorithm proposed in this paper first denoises an image. Image denoising can be done in a number of ways. In the recent years bilateral filtering, anisotropic diffusion, non-local means have been used. These methods, however, only denoise an image in patches. I plan on implementing a ``wavelet based edge detection`` method.
 
 A wavelet based edge detector has advantages over other traditional filters because they can vary in length and width, i.e they can be scaled. So, this detector effectively allows us to control their behavior. A careful balance is to be set between the image resolution and the scale of edges. Sharper edges are retained by the wavelet transform across different scales, whereas less significant edges are attenuated as the scale increases.
 
-There are two approaches mentioned in the research paper. They both work on a binary tree partition, and then performs processing on it. The first method requires ``O(N^1.5)`` time complexity and produces better results, the other method has a ``O(N log(N))`` complexity and results in a slight loss of detection accuracy but is faster,  I propose to implement both of these. The execution time of the latter 'faster' algorithm is 2 seconds on a (129x129) image. Alternatively, the run time is several minutes per image in the paper ["Detecting Faint Curved Edges in Noisy Images"](https://pdfs.semanticscholar.org/9d5b/a5041f2063db2bc110dbb40c099f1f9b7ecf.pdf), by Sharon Alpert.
+There are two approaches mentioned in the research paper. They both work on a binary tree partition, and then performs processing on it. The first method requires ``O(N<sup>1.5</sup>)`` time complexity and produces better results, the other method has a ``O(N log(N))`` complexity and results in a slight loss of detection accuracy but is faster, I propose to implement both of these. The execution time of the latter 'faster' algorithm is 2 seconds on a (129x129) image. Alternatively, the run time is several minutes per image in the paper ["Detecting Faint Curved Edges in Noisy Images"](https://pdfs.semanticscholar.org/9d5b/a5041f2063db2bc110dbb40c099f1f9b7ecf.pdf), by Sharon Alpert.
 
 ### Approach ###
 
-The input image  *I* is in grayscale, which is further decomposed to "I = I<sub>clean</sub> + I<sub>noise</sub>" where I<sub>clean</sub> is noise free image with step edges of constant contrast and I<sub>noise</sub> is a noisy image. An edge is represent by ``γ`` (gamma). The following response vector is associated with the curve γ
+The input image  *I* is in grayscale, which is further decomposed into "I = I<sub>clean</sub> + I<sub>noise</sub>" where I<sub>clean</sub> is a noise free image with step edges of constant contrast and I<sub>noise</sub> is a noisy image. An edge is represent by ``γ`` (gamma). The following response vector is associated with the curve γ
 
 >φ(γ) = [R, L, C, P ]
 
@@ -76,7 +76,7 @@ The input image  *I* is in grayscale, which is further decomposed to "I = I<sub>
 * C: average contrast along the curve, equates to ``R/m(L)``
 * R: Difference between sum of pixel intensities along each side of curve γ
 
-To detect curves with significant responses, a 'beam-curve binary tree' of the noisy image *I* is constructed. The tree is constructed using the bottom up approach. A pseudo code for its construction is cited below.
+To detect curves with significant responses, a 'beam-curve binary tree' of the noisy image *I* is constructed. The tree is constructed using the bottom up approach. A pseudo code for its construction is cited below:
 
 ```
 BeamCurveTree(V):
@@ -93,13 +93,13 @@ BeamCurveTree(V):
  return BC
 ```
 
-Here ``BC`` is a data structure in which we store our tree. The edge map *E* is constructed by setting all points of *E* to zero. Then, we it assign with significance scores based on φ(γ) I described earlier. Then all the curves are sorted in descending order. For each curve γ in this sorted list,
-for each pixel *p ∈ P*, *E(p)* is set to hold the score of γ. Non-maximum suppression is then applied to deal with over lapping curves. 
+Here ``BC`` is a data structure in which we store our tree. The edge map *E* is constructed by setting all points of *E* to zero. Then, we assign it with significance scores based on φ(γ), as I described earlier. After this all curves are sorted in descending order. For each curve γ in this sorted list,
+for each pixel *p ∈ P*, *E(p)* is set to hold the score of γ. Non-maximum suppression is then applied to deal with over lapping curves.
 
-There are two alternatives to binary beam tree, namely  Triangle-Partition-Tree (TPT) and  the Rectangle-Partition-Tree (RPT). A TPT is usually computationaly faster. In RPT the square matrix is recursively broken down into smaller matrices uptil our n<sub>min</sub> has been reached. As the name denotes for TPT the image is broken down into smalled triangles. Both these yield a similar edge detection performance.
+There are two alternatives to binary beam tree, namely  Triangle-Partition-Tree (TPT) and  the Rectangle-Partition-Tree (RPT). A TPT is usually computationaly faster. In RPT the square matrix is recursively broken down into smaller matrices uptil our n<sub>min</sub> has been reached. As the name denotes, for TPT the image is broken down into smaller triangles. Both these yield a similar edge detection performance.
 
 #### Results ####
-As mentioned in the paper experiments were conducted on images with different SNR levels. Image of the letter 'S' was used for this purpose. Different SNR levels 0.6 and 2.6 in intervals of 0.2 were chosen. Futhermore, salt and pepper noise was added in the image. This only affect around 1% of the total pixels. The F-measure was computed and compared with results achieved through other algorithms. F-measure is a summary statistic for a precision-recall curve, mentioned in [this](https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/papers/mfm-pami-boundary.pdf) paper. Our algorithm achieved the best score.
+As mentioned in the paper, experiments were conducted on images with different SNR levels. Image of the letter 'S' was used for this purpose. Different SNR levels of 0.6 and 2.6 in intervals of 0.2 were chosen. Futhermore, salt and pepper noise was added in the image. This only affect around 1% of the total pixels. The F-measure was computed and compared with results achieved through other algorithms. F-measure is a summary statistic for a precision-recall curve, mentioned in [this](https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/papers/mfm-pami-boundary.pdf) paper. Our algorithm achieved the best score.
 
 ## Timeline ##
 
@@ -119,5 +119,5 @@ As mentioned in the paper experiments were conducted on images with different SN
 
 ## Availability ##
 
-My final exams end on May 20<sup>th</sup>. So, I will have ample time for the community bonding period. After that, I will be free during the whole summer i.e. almost three months. I do not have any other commitments, so I can focus all my attention to GSoC.
+My final exams are scheduled to end on May 20<sup>th</sup>. So, I will have ample time for the community bonding period. After that, I will be free during the whole summer i.e. almost three months. I do not have any other commitments, so I can focus all my attention to GSoC.
 
